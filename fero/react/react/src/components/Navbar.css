@@ -1,0 +1,174 @@
+/* Navbar.css */
+
+/* Genel Navbar stili */
+.navbar {
+  background: linear-gradient(90deg, #1a202c 0%, #2d3748 100%); /* Koyu gradient arka plan */
+  padding: 15px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Hafif gölge */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+/* Navbar markası (Güvenli Belge Sistemi) */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #63b3ed !important; /* Hafif mavi ton */
+  transform: scale(1.05); /* Hafif büyütme efekti */
+}
+
+/* Marka ikon (isteğe bağlı bir sembol) */
+.navbar-brand::before {
+  content: '📜'; /* Belge ikonu */
+  font-size: 1.5rem;
+  animation: spin 5s infinite linear;
+}
+
+/* Navbar bağlantıları */
+.nav-link {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #e2e8f0 !important; /* Açık gri */
+  margin: 0 15px;
+  padding: 8px 12px !important;
+  border-radius: 6px;
+  position: relative;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+}
+
+/* Bağlantıların altındaki çizgi efekti */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #63b3ed;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 80%; /* Hover'da çizgi genişler */
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background: rgba(99, 179, 237, 0.1); /* Hafif mavi arka plan */
+  transform: translateY(-2px); /* Hafif yükselme */
+}
+
+/* Aktif bağlantı */
+.nav-link.active {
+  color: #63b3ed !important;
+  font-weight: 600;
+  background: rgba(99, 179, 237, 0.2);
+}
+
+/* Navbar toggle butonu (mobil için) */
+.navbar-toggler {
+  border: none;
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  transform: rotate(90deg); /* Hafif dönme efekti */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobil menü açıldığında arka plan */
+.navbar-collapse {
+  background: linear-gradient(90deg, #1a202c 0%, #2d3748 100%);
+  border-radius: 8px;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.5s ease-out;
+}
+
+/* Animasyonlar */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive tasarım */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    margin: 5px 0;
+    padding: 8px !important;
+    text-align: center;
+  }
+
+  .nav-link::after {
+    display: none; /* Mobilde alt çizgi kaldırılsın */
+  }
+
+  .nav-link:hover {
+    transform: none; /* Mobilde yükselme efekti kaldırılsın */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .navbar-brand::before {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}

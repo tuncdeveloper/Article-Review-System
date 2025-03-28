@@ -1,0 +1,334 @@
+/* RefereeExamine.css */
+
+/* Genel container */
+.container {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f9fbfc 0%, #e6ecef 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Üstteki sabit bölüm (Hakem bilgileri ve Makaleler başlığı) */
+.header-section {
+  width: 100%;
+  padding: 20px 30px;
+  background: linear-gradient(90deg, #dfe6e9 0%, #b2bec3 100%);
+  border-bottom: 1px solid #e0e4e8;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Hakem adı */
+.header-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1a3c5e;
+  margin-bottom: 10px;
+  text-align: left;
+  position: relative;
+}
+
+.header-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background-color: #3498db;
+  border-radius: 2px;
+}
+
+/* Uzmanlık alanı ve açıklama */
+.header-section p {
+  font-size: 1.1rem;
+  color: #2d4059;
+  margin: 5px 0;
+}
+
+.header-section p strong {
+  color: #1a3c5e;
+  font-weight: 600;
+}
+
+/* Makaleler başlığı */
+.header-section h3 {
+  font-size: 2rem;
+  color: #1a3c5e;
+  margin: 20px 0 10px;
+  font-weight: 600;
+  text-align: left;
+  position: relative;
+}
+
+.header-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background-color: #4a90e2;
+  border-radius: 2px;
+}
+
+/* Ortalı içerik bölümü */
+.content-section {
+  width: 100%;
+  max-width: 800px; /* İçeriği ortalamak için maksimum genişlik */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Makale listesi */
+.articleList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* Her bir makale öğesi */
+.articleItem {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  margin-bottom: 25px;
+  border-left: 5px solid #3498db;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.articleItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.articleItem h4 {
+  font-size: 1.6rem;
+  color: #1a3c5e;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Makale detayları */
+.article-details {
+  margin-bottom: 15px;
+}
+
+.article-details p {
+  margin: 8px 0;
+  font-size: 1rem;
+  color: #2d4059;
+  text-align: center;
+}
+
+.article-details p strong {
+  color: #1a3c5e;
+  font-weight: 600;
+}
+
+/* PDF butonları */
+.pdfButtons {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.pdfButton {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #1abc9c 0%, #16a085 100%);
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pdfButton:hover {
+  background: linear-gradient(90deg, #16a085 0%, #138d75 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Yorumlar bölümü */
+.commentsSection {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.commentsSection h5 {
+  font-size: 1.2rem;
+  color: #1a3c5e;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Yorumlar */
+.comment {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comment p {
+  font-size: 1rem;
+  color: #2d4059;
+  margin: 0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Yorum butonları */
+.commentButtons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.editButton {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #f39c12 0%, #e67e22 100%);
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.editButton:hover {
+  background: linear-gradient(90deg, #e67e22 0%, #d35400 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Yorum giriş alanı */
+.commentInput {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+.commentInput:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+  outline: none;
+}
+
+/* Yorum ekleme/güncelleme butonu */
+.commentButton {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #2ecc71 0%, #27ae60 100%);
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+.commentButton:hover {
+  background: linear-gradient(90deg, #27ae60 0%, #219653 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Hata mesajı */
+.error {
+  margin: 25px 0;
+  border-radius: 8px;
+  background-color: #ffebee;
+  border: 1px solid #ef5350;
+  color: #d32f2f;
+  padding: 15px;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Yükleniyor mesajı */
+.loading {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Makale bulunamadı mesajı */
+.no-articles {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .header-section {
+    padding: 15px;
+  }
+
+  .header-section h2 {
+    font-size: 2rem;
+  }
+
+  .header-section h3 {
+    font-size: 1.6rem;
+  }
+
+  .content-section {
+    padding: 15px;
+  }
+
+  .articleItem {
+    padding: 15px;
+  }
+
+  .articleItem h4 {
+    font-size: 1.4rem;
+  }
+
+  .pdfButton,
+  .editButton,
+  .commentButton {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .commentButtons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .commentInput {
+    min-height: 60px;
+  }
+}

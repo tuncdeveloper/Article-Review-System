@@ -1,0 +1,232 @@
+/* ArticleStatus.css */
+
+/* Genel konteyner */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%); /* Daha modern bir gradient */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Kart tasarımı */
+.card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  width: 100%;
+  max-width: 450px; /* Daha kompakt bir kart */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(200, 220, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Başlık */
+.card h2 {
+  margin: 0 0 20px 0;
+  font-size: 1.7rem;
+  color: #2c3e50; /* Daha koyu ve modern bir renk */
+  font-family: 'Montserrat', sans-serif; /* Modern bir font */
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* Form grubu */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input alanı */
+.form-input {
+  padding: 12px 15px;
+  font-size: 1rem;
+  color: #34495e;
+  border: 2px solid #e0e6ed;
+  border-radius: 8px;
+  outline: none;
+  font-family: 'Roboto', sans-serif; /* Daha modern bir font */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #3498db; /* Daha modern bir mavi ton */
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+/* Buton grubu */
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Genel buton stili */
+.btn {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Birincil buton (Sorgula) */
+.btn-primary {
+  background: linear-gradient(90deg, #3498db 0%, #2980b9 100%); /* Modern mavi tonlar */
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, #2980b9 0%, #1f618d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(41, 128, 185, 0.5);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(41, 128, 185, 0.3);
+}
+
+.btn-primary:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* İkincil buton (Temizle) */
+.btn-secondary {
+  background: #ecf0f1;
+  color: #2c3e50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+  background: #d5dbdb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Spinner (Yükleme animasyonu) */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* İlerleme çubuğu konteyneri */
+.progress-container {
+  margin-top: 20px;
+  width: 100%;
+  background: #e0e6ed;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 25px;
+}
+
+/* İlerleme çubuğu */
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3498db 0%, #2980b9 100%);
+  color: #fff;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.2s ease;
+}
+
+/* Uyarı mesajları */
+.alert {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+
+.alert-success {
+  background: #e7f3e7;
+  color: #2ecc71;
+  border: 1px solid #d4edda;
+}
+
+.alert-error {
+  background: #f9e1e2;
+  color: #e74c3c;
+  border: 1px solid #f5c6cb;
+}
+
+/* Bilgi metni */
+.info-text {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
+  .form-input {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .progress-container {
+    height: 20px;
+  }
+
+  .progress-bar {
+    font-size: 0.8rem;
+  }
+
+  .alert,
+  .info-text {
+    font-size: 0.95rem;
+  }
+}
